@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apic Qrcode ganretor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+        body{
+            width:100vw;
+            height: 100vh;
+            background-color: #d3e9e2;
+        }
+        header{
+            padding: 1.5rem;
+            font-weight: 900;
+            text-align: center;
+            background-color: #f9c3c6;
+        }
+        header h1{
+            font-style: italic;
+            font-family: "Playwrite CU", cursive;
+        }
+        #form{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 300px;
+           border-bottom:5px solid white;
+           border-bottom-left-radius: 10px;
+           border-bottom-right-radius: 10px;
+           background-color: #f9c3c6;
+        }
+        .form-label{
+            padding: 0.5rem;
+            font-size: 1.5rem;
+        }
+        .form-control{
+            margin: 1rem;
+            height: 2rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            border:solid white;
+        }
+        .btn{
+            font-size: 1.3rem;
+            padding:0.2rem 0.8rem;
+            border-radius: 7px;
+            border: 0;
+            color: white;
+            /* background-color: #3e3ef7; */
+            background:linear-gradient(to right, #3e3ef7, #f08186) ;
+            /* margin-top: 5px; */
+        }
+        #img-box{
+            border-radius: 10px;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        img{
+            max-width: 400px;
+            width: 80%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="header">Apic QRcode Ganretor</h1>
+    </header>
+    <main>
+        <div id="main">
+            <div id="form">
+                <form action="/" method="post">
+                    <label for="title" class="form-label">Enter text & link to create QRcode </label>
+                    <div>
+                        <input type="text" class="form-control" name="title" id="title" aria-describedby="emailHelp"> 
+                        <button type="submit" class="btn">Submit</button>
+                    </div>
+                    
+                </form>
+            </div>
+            <div id="img-box">
+                <img src="{{url_for('static', filename='/qrcode.png')}}" alt="">
+                 <!-- <img src="/static/qrcode.png" alt=""> -->
+            </div>
+        </div>
+    </main>
+</body>
+</html>
